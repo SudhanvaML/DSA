@@ -1,0 +1,1375 @@
+1. Sum of Natural Numbers
+
+#include<stdio.h>
+void main()
+{
+int n,i,sum=0;
+printf("Enter the number of Elements\n");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+sum=sum+i;
+}
+printf("The sum of %d numbers is %d\n",n,sum);
+}
+
+
+2. Even or Odd
+
+#include<stdio.h>
+void main()
+{
+int n;
+printf("Enter the number\n");
+scanf("%d",&n);
+if((n%2)==0)
+{
+printf("Entered number %d is even\n",n);
+}
+else
+{
+printf("Entered number %d is odd\n",n);
+}
+}
+
+
+3. fibonacci Series
+
+#include<stdio.h>
+void main()
+{
+int i,n,f1=0,f2=1,f3;
+printf("Enter the number \n");
+scanf("%d",&n);
+printf("The fibonacci series is :\n");
+for(i=1;i<=n;i++)
+{
+printf("%d\n",f1);
+f3=f1+f2;
+f1=f2;
+f2=f3;
+}
+}
+
+
+4. Arithmetic Case Condition
+
+#include<stdio.h>
+void main()
+{
+int a,b,n,i,sum,diff,mult,div;
+printf("Enter  two numbers :\n");
+scanf("%d %d",&a,&b);
+printf("Enter your choice : \n");
+scanf("%d",&n);
+switch(n)
+{
+case 1: sum=a+b;
+        printf("The sum is = %d\n",sum);
+        break;
+case 2: diff=a-b;
+        printf("The diff is = %d\n",diff);
+        break;
+case 3: mult=a*b;
+        printf("The mul is = %d\n",mult);
+        break;
+case 4: if (b==0)
+        {
+        printf("Cannot perform\n");
+        }
+        else
+        {
+        div=a/b;
+        printf("The div id = %d\n",div);
+        break;
+        }
+default:printf("Invalid choice\n" );
+        break;
+}
+}
+
+
+5. Insert ele into Array 1
+
+#include<stdio.h>
+void main()
+{
+int a[20],i,j,k,size,pos,ele;
+printf("Enter the size\n");
+scanf("%d",&size);
+printf("Enter the elements\n");
+for(i=0;i<size;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("Enter the position\n");
+scanf("%d",&pos);
+printf("Enter the element\n");
+scanf("%d",&ele);
+if(pos<=0||pos>(size+1))
+{
+printf("Invalid position\n");
+}
+else
+{
+for(i=(size-1);i>=(pos-1);i--)
+{
+a[i+1]=a[i];
+}
+a[pos-1]=ele;
+size++;
+}
+printf("Updated array\n");
+for(i=0;i<size;i++)
+{
+printf("%d\n",a[i]);
+}
+}
+
+
+6. Insert ele into Array 2
+
+#include<stdio.h>
+void main()
+{
+int a[20],i,j,k,size,pos,ele;
+printf("Enter the size\n");
+scanf("%d",&size);
+printf("Enter the elements\n");
+for(i=0;i<size;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("Enter the position\n");
+scanf("%d",&pos);
+printf("Enter the element\n");
+scanf("%d",&ele);
+if(pos<=0||pos>(size+1))
+{
+printf("Invalid position\n");
+}
+else
+{
+a[size]=a[pos-1];
+a[pos-1]=ele;
+}
+size++;
+printf("Updated array\n");
+for(i=0;i<size;i++)
+{
+printf("%d\n",a[i]);
+}
+}
+
+
+7. Swap of 2 ele in array
+
+#include<stdio.h>
+void main()
+{
+int a[20],i,j,k,e,size,temp;
+printf("Enter the size\n");
+scanf("%d",&size);
+printf("Enter the elements\n");
+for(i=1;i<=size;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("Enter the position\n");
+scanf("%d %d",&j, &k);
+temp=a[j];
+a[j]=a[k];
+a[k]=temp;
+printf("After swapping\n");
+for(i=1;i<=size;i++)
+{
+printf("%d\n",a[i]);
+}
+}
+
+
+8. Deleting ele from array
+
+
+#include<stdio.h>
+void main()
+{
+int a[20],i,j,k,size,pos;
+printf("Enter the size\n");
+scanf("%d",&size);
+printf("Enter the elements\n");
+for(i=0;i<size;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("Enter the position\n");
+scanf("%d",&pos);
+if(pos<=0 || pos>(size+1))
+{
+printf("Invalid position\n");
+}
+else
+{
+for(i=pos-1;i<size-1;i++)
+{
+a[i]=a[i+1];
+}
+size--;
+}
+printf("Updated array\n");
+for(i=0;i<size;i++)
+{
+printf("%d\n",a[i]);
+}
+}
+
+
+9. Bubble sort
+
+
+#include<stdio.h>
+void main()
+{
+int a[20],i,j,k,size,temp,flag=0;
+printf("Enter the size\n");
+scanf("%d",&size);
+printf("Enter the elements\n");
+for(i=0;i<size;i++)
+{
+scanf("%d",&a[i]);
+}
+for(i=0;i<size-1;i++)
+{
+for(j=0;j<size-i-1;j++)
+{
+if(a[j]>a[j+1])
+{
+temp=a[j];
+a[j]=a[j+1];
+a[j+1]=temp;
+flag=1;
+}
+}
+}
+printf("Updated array\n");
+for(i=0;i<size;i++)
+{
+printf("%d\n",a[i]);
+}
+}
+
+
+10. Linear search
+
+
+#include<stdio.h>
+void main()
+{
+        int a[20],i,size,ele,flag=0;
+        printf("Enter the size\n");
+        scanf("%d",&size);
+        printf("Enter the elements\n");
+        for(i=0;i<size;i++)
+        {
+                scanf("%d",&a[i]);
+        }
+        printf("Enter the element\n");
+        scanf("%d",&ele);
+        for(i=0;i<size;i++)
+        {
+                if(a[i]==ele)
+                {
+                        printf("Element found at %d position\n",i);
+                        flag=1;
+                }
+        }
+        if(flag==0)
+        {
+                printf("Element not found");
+        }
+}
+
+
+
+11.  Binary Search
+
+
+#include<stdio.h>
+void main()
+{
+int a[20],i,size,ele,flag=0,right,left=0,mid,result;
+printf("Enter the size\n");
+scanf("%d",&size);
+printf("Enter the elements\n");
+for(i=0;i<size;i++)
+{
+        scanf("%d",&a[i]);
+}
+printf("Enter the search element\n");
+scanf("%d",&ele);
+right=size-1;
+while(left<=right)
+{
+        mid=(left+right)/2;
+        if(a[mid]==ele)
+        {
+                result=mid;
+                flag=1;
+                break;
+        }
+        else if(a[mid]<ele)
+        {
+                left=mid+1;
+        }
+        else
+        {
+                right=mid-1;
+        }
+ }
+if(flag==0)
+{
+printf("Element not found\n");
+}
+else
+{
+printf("Element found at position %d\n", result);
+}
+}
+
+
+12. Selection sort
+
+#include<stdio.h>
+void main()
+{
+int a[20],i,j,k,size,small,temp;
+printf("Enter the size\n");
+scanf("%d",&size);
+printf("Enter the elements\n");
+for(i=0;i<size;i++)
+{
+scanf("%d",&a[i]);
+}
+for(i=0;i<size-1;i++)
+{
+small=i;
+for(j=i+1;j<size;j++)
+{
+if(a[j]<a[small])
+{
+small=j;
+}
+}
+if(small!=i)
+{
+temp=a[i];
+a[i]=a[small];
+a[small]=temp;
+}
+}
+printf("After sorting\n");
+for(i=0;i<size;i++)
+{
+printf("%d\n",a[i]);
+}
+}
+
+
+
+13. Stack Operation
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define size 5
+int i, top=-1, stack_array[size];
+void push();
+void pop();
+void display();
+
+void push()
+{
+int ele;
+if(top==size-1)
+{
+printf("Overflow\n\n");
+}
+else
+{
+printf("Enter the element to be inserted\n");
+scanf("%d",&ele);
+top=top+1;
+stack_array[top]=ele;
+}
+}
+
+void pop()
+{
+if(top==-1)
+{
+printf("Underflow\n\n");
+}
+else
+{
+printf("Popped element is %d\n\n", stack_array[top]);
+top=top-1;
+}
+}
+
+void display()
+{
+if (top==-1)
+{
+printf("Underflow\n\n");
+}
+else
+{
+printf("Elelments present in stack\n");
+for(i=top;i>=0;i--)
+{
+printf("%d\n", stack_array[i]);
+}
+}
+}
+
+void main()
+{
+int choice;
+do
+{
+printf("1.Push() 2.pop() \n3.display() 4.Exit\n");
+printf("Enter your choice\n");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1: push();
+break;
+case 2: pop();
+break;
+case 3: display();
+break;
+case 4: exit(0);
+break;
+default:printf("Invalid choice\n");
+break;
+}
+}
+while(choice!=4);
+}
+
+
+
+14. Infix to Postfix
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define size 30
+int top=-1;
+char stack[size];
+
+void push(char c)
+{
+if(top == size-1)
+{
+printf("Stack Overflow \n");
+}
+else
+{
+stack[++top]=c;
+}
+}
+
+char pop()
+{
+if(top == -1)
+{
+printf("Stack Overflow \n");
+}
+else
+{
+return stack[top--];
+}
+}
+
+int precedence(char op)
+{
+switch(op)
+{
+case'+':
+case'-': return 1;
+
+case'*':
+case'/': return 2;
+
+case'^': return 3;
+
+default : return 0;
+}
+}
+
+void infix_to_postfix(char infix[], char postfix[])
+{
+int i=0,j=0;
+char symbol, temp;
+
+while((symbol = infix[i])!='\0')
+{
+i++;
+switch(symbol)
+{
+case '(': push(symbol);
+          break;
+case ')': while(stack[top]!='(')
+{
+temp=pop();
+postfix[j++]=temp;
+}
+break;
+case '+':
+case '-':
+case '*':
+case '/':
+case '^':
+
+while(precedence(stack[top])>=precedence(symbol))
+{
+postfix[j++]=pop();
+}
+push(symbol);
+break;
+default:postfix[j++]=symbol;
+}
+}
+
+while(top!=-1)
+{
+postfix[j++]=pop();
+}
+}
+
+void main()
+{
+char infix[size], postfix[size];
+printf("Enter Infix expresion : \n");
+scanf("%s",infix);
+infix_to_postfix(infix,postfix);
+printf("The postfix expression is \n %s\n",postfix);
+}
+
+
+
+15. Eval Postfix Expression
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+#include<math.h>
+#define size 30
+int top=-1;
+float stack[size];
+
+void push(float value)
+{
+if(top==size-1)
+{
+printf("Stack overflow \n");
+}
+else
+{
+stack[++top]=value;
+}
+}
+
+float pop()
+{
+if(top==-1)
+{
+printf("Stack Underflow \n");
+return 0;
+}
+else
+{
+return stack[top--];
+}
+}
+
+float evaluatePostfix(char *expression)
+{
+for(int i=0;expression[i]!='\0';i++)
+{
+if(isdigit(expression[i]))
+{
+push(expression[i]-'0');
+}
+else
+{
+int operand2 = pop();
+int operand1 = pop();
+
+switch(expression[i])
+{
+case '+': push(operand1+operand2);
+        break;
+case '-': push(operand1-operand2);
+        break;
+case '*': push(operand1*operand2);
+        break;
+case '/': if (operand2==0)
+{
+printf("Cannot perform this operation \n");
+}
+else
+{
+push(operand1/operand2);
+}
+break;
+case '^': push(pow(operand1,operand2));
+        break;
+default: printf("Invalid Operator : %c \n",expression[i]);
+exit(EXIT_FAILURE);
+}
+}
+}
+return pop();
+}
+
+void main()
+{
+char postfixExpression[size];
+int result;
+printf("Enter postfix expression \n");
+scanf("%s",postfixExpression);
+result= evaluatePostfix(postfixExpression);
+printf("The value is : %d \n",result);
+}
+
+
+16. Tower of hanoi
+
+
+#include<stdio.h>
+int Tower_of_hanoi(int n, char s, char t, char d)
+{
+if(n!=0)
+{
+Tower_of_hanoi(n-1,s,d,t);
+printf("Move disk %d from %c to %c\n",n,s,d);
+Tower_of_hanoi(n-1,t,s,d);
+}
+}
+
+void main()
+{
+int n;
+printf("Enter the number of disks \n");
+scanf("%d",&n);
+Tower_of_hanoi(n,'A','B','C');
+}
+
+
+17. Factorial using Recursion
+
+
+#include<stdio.h>
+int fact(int n)
+{
+if(n>=1)
+return n*fact(n-1);
+else
+return 1;
+}
+int main()
+{
+int n;
+printf("Enter a number\n");
+scanf("%d",&n);
+printf("Factorial of %d is %d \n",n,fact(n));
+return 0;
+}
+
+
+18. Binary Search using Recursion
+
+
+#include<stdio.h>
+int binary(int a[],int l, int r,int ele)
+{
+if(l<=r)
+{
+int m=(l+r)/2;
+if (a[m]==ele)
+return m;
+else if (a[m]<ele)
+return binary(a,m+1,r,ele);
+else
+return binary(a,l,m-1,ele);
+return 1;
+}
+}
+
+int main()
+{
+int res=0,ele,n,a[20],i;
+printf("Enter the size\n");
+scanf("%d",&n);
+printf("Enter the elements\n");
+for(i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("Enter the element\n");
+scanf("%d",&ele);
+res=binary(a,0,n-1,ele);
+printf("Element found at %d \n",res);
+return 0;
+}
+
+
+19. Queue operations
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define n 3
+int Q[n],R=-1,F=-1;
+
+void enqueue()
+{
+int ele;
+printf("Enter the element \n");
+scanf("%d",&ele);
+if(R==n-1)
+{
+printf("Queue Overflow \n");
+}
+else
+{
+R=R+1;
+Q[R]=ele;
+if(F==-1)
+{
+F=F+1;
+}
+}
+}
+
+void dequeue()
+{
+int delete;
+if(F==-1)
+{
+printf("Queue Underflow \n");
+}
+else
+{
+delete=Q[F];
+F=F+1;
+printf("Removed element is %d \n",delete);
+if(F>R)
+{
+R=-1;
+F=-1;
+}
+}
+}
+
+void display()
+{
+int i;
+if(F==-1)
+{
+printf("Queue is empty \n");
+}
+else
+{
+printf("Queue elements are \n");
+for(i=F;i<=R;i++)
+{
+printf("%d\n",Q[i]);
+}
+}
+}
+
+void main()
+{
+int choice;
+do
+{
+printf("Enter your choice\n");
+printf("1.Enqueue  2.Dequeue  3.Display  4.Exit \n");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:enqueue();
+        break;
+case 2:dequeue();
+        break;
+case 3:display();
+        break;
+case 4:exit (0);
+default:printf("Invalid choice\n");
+        break;
+}
+}
+while(choice!=4);
+}
+
+
+
+20. Circular queue
+
+#include<stdio.h>
+#include<stdlib.h>
+#define n 3
+int Q[n],R=-1,F=-1;
+
+void enqueue()
+{
+int ele;
+printf("Enter the element \n");
+scanf("%d",&ele);
+if((R+1)%n==F)
+{
+printf("Queue Overflow \n");
+}
+else
+{
+R=((R+1)%n);
+Q[R]=ele;
+if(F==-1)
+{
+F=F+1;
+}
+}
+}
+
+void dequeue()
+{
+int delete;
+if(F==-1)
+{
+printf("Queue Underflow \n");
+}
+else
+{
+delete=Q[F];
+F=((F+1)%n);
+printf("Removed element is %d \n",delete);
+if(F==(R+1)%n)
+{
+R=-1;
+F=-1;
+}
+}
+}
+
+void display()
+{
+int i;
+if(F==-1)
+{
+printf("Queue is empty \n");
+}
+else
+{
+        i=F;
+        if(R>=F)
+        {
+                printf("Queue elements are \n");
+                while(i<=R)
+                printf("%d \n",Q[i++]);
+        }
+        else
+        {
+                printf("Queue elements are \n");
+                while(i<n)
+                printf("%d \n",Q[i++]);
+                i=0;
+                while(i<=R)
+                printf("%d \n",Q[i++]);
+        }
+}
+}
+
+void main()
+{
+int choice;
+do
+{
+printf("Enter Your Choice For Circular Queue \n");
+printf("1.Enqueue  2.Dequeue  3.Display  4.Exit \n");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:enqueue();
+        break;
+case 2:dequeue();
+        break;
+case 3:display();
+        break;
+case 4:exit (0);
+default:printf("Invalid choice\n");
+        break;
+}
+}
+while(choice!=4);
+}
+
+
+
+21. Ascending Priority Queue
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define n 3
+int Q[n],R=-1,F=-1;
+
+void enqueue()
+{
+int ele,pos;
+printf("Enter the element \n");
+scanf("%d",&ele);
+if(R==(n-1))
+{
+printf("Queue Overflow \n");
+}
+else
+{
+pos=R;
+R=(R+1);
+while(pos>=0 && Q[pos]>=ele)
+{
+Q[pos+1]=Q[pos];
+pos=pos-1;
+}
+Q[pos+1]=ele;
+if(F==-1)
+F=F+1;
+}
+}
+
+void dequeue()
+{
+int delete;
+if(F==-1)
+{
+printf("Queue Underflow \n");
+}
+else
+{
+delete=Q[F];
+F=F+1;
+printf("Removed element is %d \n",delete);
+if(F>R)
+{
+R=-1;
+F=-1;
+}
+}
+}
+
+void display()
+{
+int i;
+if(F==-1)
+{
+printf("Queue is empty \n");
+}
+else
+{
+printf("Queue elements are \n");
+for(i=F;i<=R;i++)
+{
+printf("%d\n",Q[i]);
+}
+}
+}
+
+
+
+void main()
+{
+int choice;
+do
+{
+printf("Enter Your Choice For Ascending Priority Queue \n");
+printf("1.Enqueue  2.Dequeue  3.Display  4.Exit \n");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:enqueue();
+        break;
+case 2:dequeue();
+        break;
+case 3:display();
+        break;
+case 4:exit (0);
+default:printf("Invalid choice\n");
+        break;
+}
+}
+while(choice!=4);
+}
+
+
+
+22. descending Priority Queue
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define n 3
+int Q[n],R=-1,F=-1;
+
+void enqueue()
+{
+int ele,pos;
+printf("Enter the element \n");
+scanf("%d",&ele);
+if(R==(n-1))
+{
+printf("Queue Overflow \n");
+}
+else
+{
+pos=R;
+R=(R+1);
+while(pos>=0 && Q[pos]<=ele)
+{
+Q[pos+1]=Q[pos];
+pos=pos-1;
+}
+Q[pos+1]=ele;
+if(F==-1)
+F=F+1;
+}
+}
+
+void dequeue()
+{
+int delete;
+if(F==-1)
+{
+printf("Queue Underflow \n");
+}
+else
+{
+delete=Q[F];
+F=F+1;
+printf("Removed element is %d \n",delete);
+if(F>R)
+{
+R=-1;
+F=-1;
+}
+}
+}
+
+void display()
+{
+int i;
+if(F==-1)
+{
+printf("Queue is empty \n");
+}
+else
+{
+printf("Queue elements are \n");
+for(i=F;i<=R;i++)
+{
+printf("%d\n",Q[i]);
+}
+}
+}
+
+
+
+void main()
+{
+int choice;
+do
+{
+printf("Enter Your Choice For Descending Priority Queue \n");
+printf("1.Enqueue  2.Dequeue  3.Display  4.Exit \n");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:enqueue();
+        break;
+case 2:dequeue();
+        break;
+case 3:display();
+        break;
+case 4:exit (0);
+default:printf("Invalid choice\n");
+        break;
+}
+}
+while(choice!=4);
+}
+
+
+
+23. Singly Linear Linked list
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node
+{
+int data;
+struct Node* link;
+};
+
+struct Node* insertNode(struct Node* F, int data)
+{
+struct Node* n=(struct Node*)malloc(sizeof(struct Node));
+n->data=data;
+n->link=F;
+return n;
+}
+
+struct Node* deleteFirstNode(struct Node* F)
+{
+struct Node* T;
+if(F==NULL)
+{
+printf("List is empty");
+return NULL;
+}
+T=F;
+F=F->link;
+free(T);
+return F;
+}
+
+
+void printList(struct Node* F)
+{
+struct Node* T=F;
+while(T!=NULL)
+{
+printf("%d",T->data);
+T=T->link;
+}
+printf("\n");
+}
+
+void main()
+{
+struct Node* F=NULL;
+int data;
+int choice;
+int option;
+do
+{
+printf("Enter Your Choice For Singly Linked List \n");
+printf("1.Insert a node \n2.Delete first node \n3.Display the list \n4.Exit \n");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:
+{
+printf("Enter data for the new node:");
+scanf("%d",&data);
+F=insertNode(F,data);
+printf("Linked  list after insertion:");
+printList(F);
+break;
+}
+
+case 2:
+{
+F=deleteFirstNode(F);
+printf("Linked list after deletion:");
+printList(F);
+break;
+}
+
+case 3:
+{
+printf("Linked List \n");
+printList(F);
+break;
+}
+case 4:
+{
+while(F!=NULL)
+{
+struct Node* T=F;
+F=F->link;
+free(T);
+}
+printf("Exiting\n");
+exit (0);
+}
+default:printf("Invalid option\n");
+        break;
+}
+printf("\n Do you want to continue? (y=1/n=0):");
+scanf("%d",&choice);
+}
+while(choice==1);
+}
+
+
+
+24. Tree
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node
+{
+int data;
+struct Node* left;
+struct Node* right;
+};
+
+struct Node* createNode(int data)
+{
+struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+newNode->data=data;
+newNode->left=newNode->right=NULL;
+return newNode;
+}
+
+struct Node* insert(struct Node* root, int data)
+{
+	if(root==NULL)
+		return createNode(data);
+	if(data<root->data)
+		root->left=insert(root->left,data);
+	else if(data>root->data)
+		root->right=insert(root->right,data);
+		return root;
+}
+
+void inorderTraversal(struct Node* root)
+{
+if(root!=NULL)
+{
+inorderTraversal(root->left);
+printf("%d\t",root->data);
+inorderTraversal(root->right);
+}
+}
+
+void preorderTraversal(struct Node* root)
+{
+if(root!=NULL)
+{
+printf("%d\t",root->data);
+preorderTraversal(root->left);
+preorderTraversal(root->right);
+}
+}
+
+void postorderTraversal(struct Node* root)
+{
+if(root!=NULL)
+{
+postorderTraversal(root->left);
+postorderTraversal(root->right);
+printf("%d\t",root->data);
+}
+}
+
+
+int main()
+{
+struct Node* root=NULL;
+int i;
+int value[]={50,30,70,20,40,60,80};
+for(i=0;i<sizeof(value)/sizeof(value[0]);i++)
+{
+root=insert(root,value[i]);
+}
+printf("\n Inorder Traversal:\n");
+inorderTraversal(root);
+printf("\n Preorder Traversal:\n");
+preorderTraversal(root);
+printf("\n Postorder Traversal:\n");
+postorderTraversal(root);
+printf("\n");
+}
+
+
+
+25. Depth First Search
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define maxvertices 100
+
+int visited[maxvertices];
+int adjacencyMatrix[maxvertices][maxvertices];
+int numVertices;
+
+void initializeGraph(int vertices)
+{
+int i,j;
+numVertices=vertices;
+for(i=0;i<maxvertices;i++)
+{
+visited[i]=0;
+for(j=0;j<maxvertices;j++)
+{
+adjacencyMatrix[i][j]=0;
+}
+}
+}
+
+void addEdge(int start, int end)
+{
+adjacencyMatrix[start][end]=1;
+}
+
+
+void dfs(int vertex)
+{
+int i;
+printf("%d",vertex);
+visited[vertex]=1;
+for(i=0;i<numVertices;i++)
+{
+if(adjacencyMatrix[vertex][i]==1 && !visited[i])
+{
+dfs(i);
+}
+}
+}
+
+void main()
+{
+int vertices, edges;
+int startVertex;
+int start,end,i;
+printf("Enter the number of vertices and edges \n");
+scanf("%d %d",&vertices,&edges);
+initializeGraph(vertices);
+printf("Enter the edges(start and end)\n");
+for(i=0;i<edges;i++)
+{
+scanf("%d %d",&start, &end);
+addEdge(start,end);
+}
+printf("Enter the starting vertex for DFS \n");
+scanf("%d",&startVertex);
+
+printf("Depth first search traversal starting  from vertex %d\n",startVertex);
+dfs(startVertex);
+printf("\n");
+}
+
+
+
